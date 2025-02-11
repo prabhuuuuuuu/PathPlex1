@@ -3,13 +3,6 @@ import numpy as np
 import joblib
 from flask_cors import CORS
 from datetime import datetime
-import gdown
-
-file_id = "1J4mkpi0gLKjj4cy2TYBmN_xWkxaSO97U" 
-url = f"https://drive.google.com/uc?id={file_id}"
-output = "random_forest_smote_model.joblib"
-
-gdown.download(url, output, quiet=False)
 
 
 app = Flask(__name__)
@@ -17,7 +10,7 @@ CORS(app)
 
 # ✅ Load ML Model
 try:
-    model = joblib.load(output)  # Adjust path if needed
+    model = joblib.load(r"src/assets/icons/xgb_pipeline_compressed.joblib")  # Adjust path if needed
     print("✅ Model loaded successfully!")
 except Exception as e:
     model = None
