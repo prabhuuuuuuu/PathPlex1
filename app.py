@@ -3,14 +3,14 @@ import numpy as np
 import joblib
 from flask_cors import CORS
 from datetime import datetime
-import xgbmodel from "../assets/icons/xgb_pipeline_compressed.joblib"
+import joblib
 
 app = Flask(__name__)
 CORS(app)
 
 # ✅ Load ML Model
 try:
-    model = joblib.load(xgbmodel)  # Adjust path if needed
+    model = joblib.load(r"src/assests/icons/xgb_pipeline_compressed.joblib")  # Adjust path if needed
     print("✅ Model loaded successfully!")
 except Exception as e:
     model = None
