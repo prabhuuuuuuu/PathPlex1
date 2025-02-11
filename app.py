@@ -3,7 +3,6 @@ import numpy as np
 import joblib
 from flask_cors import CORS
 from datetime import datetime
-import joblib
 
 app = Flask(__name__)
 CORS(app)
