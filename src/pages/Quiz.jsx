@@ -28,7 +28,7 @@ export default function Quiz() {
   // Fetch questions from Flask API on mount.
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/questions")
+      .get("https://pathplexbackend.onrender.com/questions")
       .then((response) => {
         if (response.data && response.data.questions) {
           setQuestions(response.data.questions);
@@ -65,7 +65,7 @@ export default function Quiz() {
     // Build the scores array based on answers.
     const scores = questions.map((q) => answers[q.id] || 0);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/results", { scores });
+      const response = await axios.post("https://pathplexbackend.onrender.com/results", { scores });
       // Navigate to the /results page with the result data in state.
       navigate("/results", { state: { result: response.data.result } });
     } catch (error) {
