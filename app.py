@@ -293,31 +293,32 @@ def store_results():
         # Transform the scores: group every 2 responses (question 1 & 2, 3 & 4, etc.)
         transformed_scores = []
         for i in range(0, len(scores), 2):
-            if i + 1 < len(scores):
-                avg = (scores[i] + scores[i + 1]) / 2  # Average the two scores
-            else:
-                avg = scores[i]
-            transformed_scores.append(float(avg))  # Convert to float
+            avg = float((scores[i] + scores[i + 1])) 
+            transformed_scores.append(avg)
+        
+        # Log the transformed array in the console
+        print("Transformed Scores:", transformed_scores)
         
         timestamp = datetime.now().isoformat()
-        # Get the prediction as an integer
-        prediction_number = int(model.predict([transformed_scores])[0]) if model else None
         
-        # Map the prediction number to a career using the career_map
+        # Get the prediction without converting to int (since our model returns a string)
+        prediction_value = model.predict([transformed_scores])[0] if model else None
+        
+        # Map the prediction string to a career using string keys
         career_map = {
-            0: {"career": "Medical & Healthcare", "description": "Best suited for medical sciences."},
-            1: {"career": "Engineering & Technology", "description": "Perfect for logical thinkers."},
-            2: {"career": "Science & Research", "description": "Ideal for analytical minds."},
-            3: {"career": "Finance & Business", "description": "For problem-solvers in finance."},
-            4: {"career": "Creative & Design", "description": "Great for artists and creators."},
-            5: {"career": "Education & Training", "description": "For those who love teaching."},
-            6: {"career": "Law & Government", "description": "Ideal for leaders and policy-makers."},
-            7: {"career": "Administration & HR", "description": "Best fit for organization management."},
-            8: {"career": "Social & Public Services", "description": "For those passionate about impact."},
-            9: {"career": "Miscellaneous & Specialized Roles", "description": "For unique and hybrid careers."}
+            "Medical & Healthcare": {"career": "Medical & Healthcare", "description": "Best suited for medical sciences."},
+            "Engineering & Technology": {"career": "Engineering & Technology", "description": "Perfect for logical thinkers."},
+            "Science & Research": {"career": "Science & Research", "description": "Ideal for analytical minds."},
+            "Finance & Business": {"career": "Finance & Business", "description": "For problem-solvers in finance."},
+            "Creative & Design": {"career": "Creative & Design", "description": "Great for artists and creators."},
+            "Education & Training": {"career": "Education & Training", "description": "For those who love teaching."},
+            "Law & Government": {"career": "Law & Government", "description": "Ideal for leaders and policy-makers."},
+            "Administration & HR": {"career": "Administration & HR", "description": "Best fit for organization management."},
+            "Social & Public Services": {"career": "Social & Public Services", "description": "For those passionate about impact."},
+            "Miscellaneous & Specialized Roles": {"career": "Miscellaneous & Specialized Roles", "description": "For unique and hybrid careers."}
         }
         
-        mapped_prediction = career_map.get(prediction_number, {"career": "Unknown", "description": "No mapping found."})
+        mapped_prediction = career_map.get(prediction_value, {"career": "Unknown", "description": "No mapping found."})
         
         result = {
             "original_scores": scores,
