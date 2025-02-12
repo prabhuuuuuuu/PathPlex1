@@ -3,4 +3,5 @@ flask-cors
 numpy
 joblib
 gdown
+sklearn
 gunicorn
