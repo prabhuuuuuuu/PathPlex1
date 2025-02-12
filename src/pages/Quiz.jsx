@@ -31,7 +31,7 @@ export default function Quiz() {
       .get("http://127.0.0.1:5000/questions")
       .then((response) => {
         if (response.data && response.data.questions) {
-          setQuestions(response.data.questions);
+          setQuestions(response.data.);
         }
       })
       .catch((err) => {
