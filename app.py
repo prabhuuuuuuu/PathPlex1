@@ -9,7 +9,7 @@ CORS(app)
 
 # ✅ Load ML Model
 try:
-    model = joblib.load(r"C:\Users\Shourya\Downloads\xgb_pipeline.joblib")  # Adjust path if needed
+    model = joblib.load(r"../assets/icons/xgb_pipeline.joblib")  # Adjust path if needed
     print("✅ Model loaded successfully!")
 except Exception as e:
     model = None
