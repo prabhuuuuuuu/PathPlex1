@@ -36,7 +36,7 @@ const Results = () => {
           <h1 className="text-5xl font-extrabold text-green-600">{result.prediction.career}</h1>
           <p className="text-xl text-gray-700 dark:text-white mt-2">{result.prediction.description}</p>
           <p className="text-sm text-gray-600 dark:text-yellow-400 mt-4">
-            <strong>Timestamp:</strong> {new Date(result.timestamp).toLocaleString()}
+            <strong>Timestamp:</strong> {new Date(result.timestamp+ 19800000).toLocaleString()}
           </p>
           <Button onClick={handleReset} className="mt-4 bg-blue-500 text-white hover:bg-blue-600">
             Reset Quiz
