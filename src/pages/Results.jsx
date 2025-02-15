@@ -20,7 +20,8 @@ const Results = () => {
   };
 
   const careerInfo = careerData[result.prediction.career] || {};
-
+  const parsedDate = new Date(result.timestamp);
+  parsedDate.setTime(parsedDate.getTime() + 5.5 * 60 * 60 * 1000);
   return (
     <div className="results-page min-h-screen bg-gradient-to-b from-green-100 to-green-200 flex items-center justify-center p-4">
       <div className="grid grid-cols-5 gap-4 w-full max-w-5xl">
@@ -36,7 +37,7 @@ const Results = () => {
           <h1 className="text-5xl font-extrabold text-green-600">{result.prediction.career}</h1>
           <p className="text-xl text-gray-700 dark:text-white mt-2">{result.prediction.description}</p>
           <p className="text-sm text-gray-600 dark:text-yellow-400 mt-4">
-            <strong>Timestamp:</strong> {new Date(result.timestamp+ 19800000).toLocaleString()}
+            <strong>Timestamp:</strong> {parsedDate.toLocaleString()}
           </p>
           <Button onClick={handleReset} className="mt-4 bg-blue-500 text-white hover:bg-blue-600">
             Reset Quiz
