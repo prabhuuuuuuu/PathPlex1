@@ -31,7 +31,7 @@ const teamMembers = [
     name: "Soham Chakraborty",
     image: Soham,
     linkedin: "https://www.linkedin.com/in/soham-chakraborty-b35107289",
-    github: "https://github.com/sohamchakro",
+    github: "https://github.com/swordboom",
   },
 ];
 
