@@ -5,7 +5,7 @@ from flask_cors import CORS
 from datetime import datetime
 import gdown
 
-#gdown code
+#gdown code for model download
 file_url="https://drive.google.com/uc?id=1J4mkpi0gLKjj4cy2TYBmN_xWkxaSO97U"
 output="random_forest_smote_model.joblib"
 gdown.download(file_url, output, quiet=False)
