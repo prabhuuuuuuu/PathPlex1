@@ -3,7 +3,6 @@ import { Card, CardContent } from "../components/ui/card";
 import { Link } from "react-router-dom";
 import { careerData } from "../career/careerData";
 
-const bgvid_dark = "https://drive.google.com/uc?id=1QSlu9KCRmWUiOK2MVxWCidtP2eMndktd&export=preview";
 
 export default function Home() {
   return (
@@ -15,12 +14,13 @@ export default function Home() {
     >
       {/* Video Background */}
       <iframe 
-  className="absolute inset-0 w-full h-full object-cover"
+  className="absolute top-0 left-0 w-full h-full"
   src="https://www.youtube.com/embed/8BXekBbk3aQ?autoplay=1&mute=1&loop=1&playlist=8BXekBbk3aQ"
   title="Background Video"
   frameBorder="0"
   allow="autoplay; fullscreen"
 ></iframe>
+
 
       {/* Content Grid */}
       <div className="relative z-10 pt-20 pb-8 h-screen grid grid-cols-1 sm:grid-cols-7 gap-4 p-4 w-full">
