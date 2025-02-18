@@ -14,16 +14,13 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="https://drive.google.com/file/d/1QSlu9KCRmWUiOK2MVxWCidtP2eMndktd/view?usp=sharing" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <iframe 
+  className="absolute inset-0 w-full h-full object-cover"
+  src="https://www.youtube.com/embed/8BXekBbk3aQ?autoplay=1&mute=1&loop=1&playlist=8BXekBbk3aQ"
+  title="Background Video"
+  frameBorder="0"
+  allow="autoplay; fullscreen"
+></iframe>
 
       {/* Content Grid */}
       <div className="relative z-10 pt-20 pb-8 h-screen grid grid-cols-1 sm:grid-cols-7 gap-4 p-4 w-full">
