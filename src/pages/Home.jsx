@@ -3,7 +3,7 @@ import { Card, CardContent } from "../components/ui/card";
 import { Link } from "react-router-dom";
 import { careerData } from "../career/careerData";
 
-const bgvid_dark="https://drive.google.com/uc?export=download&id=1QSlu9KCRmWUiOK2MVxWCidtP2eMndktd";
+const bgvid_dark="https://drive.google.com/uc?id=1QSlu9KCRmWUiOK2MVxWCidtP2eMndktd&export=preview";
 
 export default function Home() {
   return (
