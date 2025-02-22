@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Link } from "react-router-dom";
 import { careerData } from "../career/careerData";
-
+import bgvid from "../assets/icons/bgvid.mp4";
 
 export default function Home() {
   return (
@@ -13,16 +13,16 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       {/* Video Background */}
-      <iframe 
-  className="absolute top-0 left-0 w-full h-full"
-  src="https://www.youtube.com/embed/8BXekBbk3aQ?autoplay=1&mute=1&loop=1&playlist=8BXekBbk3aQ&controls=0&showinfo=0&modestbranding=1&rel=0"
-  title="Background Video"
-  frameBorder="0"
-  allow="autoplay; fullscreen"
-></iframe>
-
-
-
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={bgvid} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Content Grid */}
       <div className="relative z-10 pt-20 pb-8 h-screen grid grid-cols-1 sm:grid-cols-7 gap-4 p-4 w-full">
